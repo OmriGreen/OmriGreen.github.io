@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="Artificial Intelligence and Machine Learning">
+					</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="ai_ml.html">Artificial Intelligence and Machine Learning</a></li>
+                            <li><a href="dynamics_controls.html">Robot Dynamics and Controls</a></li>
+                            <li><a href="unified_robotics.html">Unified Robotics Series</a></li>
+                            <li><a href="robot_win_loss.html">Data Visualization</a></li>
+                            <li><a href="https://www.linkedin.com/in/ozgreen/" class="icon brands alt fa-linkedin-in"><span class="label"></span></a></li>
+							<li><a href="https://github.com/OmriGreen" class="icon brands alt fa-github"><span class="label"></span></a></li>
+							<li><a href="mailto:ozgreen@wpi.edu" class="icon solid alt fa-envelope"><span class="label"></span></a></li>
+                            
+						</ul>
+						
+					</nav>
+				</header>
+
+			<!-- planning -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Artificial Intelligence</h2>
+							<p>Ensemble Convolutional Neural Networks for Robotic Planar Grasping</p>
+						</header>
+						<div class="row gtr-150">
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+									<section id="overview">
+										<section>
+											<h3>Overview</h3>
+											<p>This project addressed the challenge of generalized robotic grasping, where robots must reliably grasp unknown objects in uncontrolled environments. Modern approaches like Best Candidate selection, Grasp Quality Estimation (e.g., DexNet-4.0), and Generative methods (e.g., GGCNN) struggle with generalization due to sensitivity to object shape, lighting, and environment.</p>
+											<footer>
+												
+											</footer>
+										</section>
+										<hr />
+										<section>
+											<a href="#" class="image fit"><img src="academics/images/AI_Arm_img.png" alt="" /></a>
+											<h3></h3>
+											<p></p>
+											
+										</section>
+									</section>
+
+							</div>
+							<div class="col-8 col-12-medium imp-medium">
+
+								<!-- Content -->
+									<section id="content">
+										<a href="#" class="image fit"><img src="academics/images/AI_result.png" alt="" /></a>
+										<h3>Testing and Results</h3>
+										<p>We proposed an Ensemble Convolutional Neural Network (ECNN) using a Mixture of Experts model. Multiple grasping networks (experts) were combined with a gating network that assigns input-dependent weights, allowing the ensemble to exploit each expert’s strengths and reduce generalization errors. Three ensemble variants were developed: Constant Weights, Image-based (ImECNN), and Grasp+Image-based (GrImECNN). The networks were trained using the Cornell Grasping Dataset and tested on real-world YCB objects with a Franka Emika robot. Results showed up to a 6% increase in classification accuracy compared to the strongest individual expert, demonstrating improved grasp quality estimation with minimal computational overhead.</p>
+										<h3>Report</h3>
+										<a href="Downloads/Ensemble Convolutional Neural Networks for Robotic Planar Grasping.pdf" download="Ensemble Convolutional Neural Networks for Robotic Planar Grasping.pdf">Download Report</a>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</div>
+                <!-- Very Original -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Machine Learning</h2>
+							<p>Just NERF It!</p>
+						</header>
+
+						<!-- Content -->
+							<section id="content">
+								<a href="#" class="image fit"><img src="academics/images/nerf.png" alt="" /></a>
+								<p>I worked with a team to build a system that transforms a small set of photos into full 3D scenes using Neural Radiance Fields (NeRF). By capturing images from different angles and estimating camera poses with COLMAP, we reconstructed scenes that could be viewed from new perspectives. The project showed strong results with static environments, even capturing reflections, though real-world scenes required more coverage than synthetic ones. Looking ahead, we explored adding object labels so users can edit scenes directly: inserting, removing, or swapping 3D objects for interactive applications.
+								</p>
+								<h3>Report</h3>
+								<ul>
+									<a href="Downloads/Just NERF It.pptx" download="Just NERF It.pptx">Download Report</a>
+								</ul>
+							</section>
+
+					</div>
+				</div>
+
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/ozgreen/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/OmriGreen" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="mailto:ozgreen@wpi.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+		</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
