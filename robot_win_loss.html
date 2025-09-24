@@ -7,41 +7,45 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-      /* Make iframe look seamless */
+      /* Keep iframe responsive but not covering header/footer */
       .embedded-page {
         width: 100%;
-        height: 80vh; /* Adjust height as needed */
+        height: 70vh; /* slightly smaller to leave space for footer */
         border: none;
         display: block;
         margin: 0 auto;
+      }
+      header {
+        text-align: center;
+        padding: 1em 0;
+      }
+      header h1 {
+        font-size: 1.8em;
+        margin: 0;
       }
     </style>
   </head>
   
   <body class="is-preload">
-
-        <!-- Header -->
+    <!-- Header -->
     <header id="header">
-        <h1 id="">
-        </h1>
-        <nav id="nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="combatRobots.html">Combat Robots</a></li>
-                <li><a href="autonomousBattling.html">Autonomous Motion Planning</a></li>
-                <li><a href="https://www.linkedin.com/in/ozgreen/" class="icon brands alt fa-linkedin-in"><span class="label"></span></a></li>
-                <li><a href="https://github.com/OmriGreen" class="icon brands alt fa-github"><span class="label"></span></a></li>
-                <li><a href="mailto:ozgreen@wpi.edu" class="icon solid alt fa-envelope"><span class="label"></span></a></li>
-            </ul>
-            
-        </nav>
+      <h1>Data Visualization</h1>
+      <nav id="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="combatRobots.html">Combat Robots</a></li>
+          <li><a href="autonomousBattling.html">Autonomous Motion Planning</a></li>
+          <li><a href="https://www.linkedin.com/in/ozgreen/" class="icon brands alt fa-linkedin-in"><span class="label"></span></a></li>
+          <li><a href="https://github.com/OmriGreen" class="icon brands alt fa-github"><span class="label"></span></a></li>
+          <li><a href="mailto:ozgreen@wpi.edu" class="icon solid alt fa-envelope"><span class="label"></span></a></li>
+        </ul>
+      </nav>
     </header>
-    <div id="page-wrapper">
 
+    <div id="page-wrapper">
       <!-- Main Content Area -->
       <section id="main">
         <h2>Interactive Demo</h2>
-        <!-- Embedded interactive page -->
         <iframe 
           class="embedded-page" 
           src="Robot-Win-Loss-Data-Visualization-CS-4048-/index.html" 
@@ -69,6 +73,5 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-
   </body>
 </html>
