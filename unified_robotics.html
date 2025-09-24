@@ -50,10 +50,8 @@
 										<section>
 											<a href="#" class="image fit"><img src="academics/images/rbe2001.png" alt="" /></a>
 											<h3>Robotic Replacement of Tilted Panels</h3>
-											<p>I developed a robot mounted 4-bar mechanism to place panels on tilted surfaces at differing heights and locations by utilizing the Solidworks design suite.
-                                                </p>
-                                                <p>Additionally I designed 2 different grippers and mounted them on 2 robots to complete the pick and place tasks.</p>
-											
+											<p>I designed a robot-mounted 4-bar mechanism to position panels on tilted surfaces at various heights and locations using the SolidWorks design suite.</p>
+                                            <p>I also created two different grippers and mounted them on two separate robots to complete the pick-and-place tasks.</p>
 										</section>
 									</section>
 
@@ -64,12 +62,11 @@
 									<section id="content">
 										<a href="#" class="image fit"><img src="academics/images/Romi_Juliet.png" alt="" /></a>
 										<h3>Thus With a Kiss I Die</h3>
-										<p> worked with a team to create a final system implemented on three robots that covered: Romi, Tybalt/Juliet, and Mercutio/Friar Lawrence (two robots played two characters).
-                                        </p><p>The team’s system heavily utilized the MQTT protocol for WiFi communication between the robots to coordinate cues and timing for the scenes in Romeo and Juliet.
-</p><p>Using WiFi helped replace other communication methods like using an IR emitter and receiver, which had multiple disadvantages, namely range and visibility.
-</p><p>The team was also able to utilize the AprilTag tracking with theOpenMV camera, which allowed for the robots to consistently follow each other.
-</p><p>The code of the system was organized in a way so each character had a “script” for the scene with the necessary tasks needed to complete.
-</p><p>All robots also shared a common program that covered general functions for all due to having the same drive base.</p>
+										<p>I collaborated with a team to implement a multi-robot system featuring three robots: Romi, Tybalt/Juliet, and Mercutio/Friar Lawrence (with some robots taking on dual roles).  
+                                        Inter-robot communication relied on the MQTT protocol over WiFi, ensuring reliable coordination of cues and timing for the scenes in <em>Romeo and Juliet</em>. This approach proved more robust than alternatives like IR emitters and receivers, which suffered from range and visibility issues.  
+                                        The robots also used AprilTag tracking with an OpenMV camera, enabling consistent following behavior.  
+                                        Each character was assigned a “script” containing scene-specific tasks, and upon receiving a trigger, the robot advanced to the next programmed action.  
+                                        All robots also shared a common base program to handle general functions, since they used the same drive platform.</p>
 										<h3>Report</h3>
 										<a href="Downloads/Thus, With a Kiss I die.pdf" download="Thus, With a Kiss I die.pdf">Download Report</a>
 									</section>
@@ -83,15 +80,28 @@
 										<section>
 											<a href="#" class="image fit"><img src="academics/images/rbe3001.png" alt="" /></a>
 											<h3>Robotic Pick and Place System</h3>
-											<p>This project details the creation of a computer vision controlled robotic arm system.
-                                            An event driven state machine using Quintic trajectory generation was coded using MATLAB on a Linux workstation.
-                                            Test trials resulted in the robot being able to detect and localize balls before sorting them by color.
-                                            The system was then able to perform dynamic object tracking and unique object manipulation. </p>
-											
+											<p>This project involved building a vision-guided robotic arm system that used quintic trajectory planning for motion control.  
+                                            Test trials showed the robot could detect and localize balls, then sort them by color using the planner.  
+                                            The system also supported dynamic object tracking and manipulation of unique objects.</p>
+											<h3>Report</h3>
+										    <a href="Downloads/Robotic Pick and Place System.pdf" download="Robotics Pick and Place System.pdf">Download Report</a>
 										</section>
 									</section>
-
+                                    
 							</div>
+                            <div class="col-8 col-12-medium imp-medium">
+
+								<!-- Content -->
+									<section id="content">
+										<a href="#" class="image fit"><img src="academics/images/rbe3002.png" alt="" /></a>
+										<h3>Automated Maze Mapping and Exploration</h3>
+										<p>This project focused on developing a ROS-based program that enabled a TurtleBot 3 Burger to autonomously map, navigate, and localize within a maze using SLAM, AMCL, and A*.  
+                                        My team implemented C-space generation, frontier detection, and navigation algorithms from scratch.  
+                                        All nodes were programmed in Python, with custom launch files created for the system.</p>
+										<h3>Report</h3>
+										<a href="Downloads/Automated Maze Mapping and Exploration.pdf" download="Automated Maze Mapping and Exploration.pdf">Download Report</a>
+									</section>
+                            </div>
 						</div>
 					</div>
 				</div>
