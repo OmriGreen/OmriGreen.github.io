@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>NEST Lab</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="">
+					</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="soft_robotics_lab.html">Soft Robotics Lab</a></li>
+							<li><a href="nest_lab.html">NEST Lab</a></li>
+                            <li><a href="robotic_materials_group.html">Robotics Materials Group</a></li>
+
+							<li><a href="https://www.linkedin.com/in/ozgreen/" class="icon brands alt fa-linkedin-in"><span class="label"></span></a></li>
+							<li><a href="https://github.com/OmriGreen" class="icon brands alt fa-github"><span class="label"></span></a></li>
+							<li><a href="mailto:ozgreen@wpi.edu" class="icon solid alt fa-envelope"><span class="label"></span></a></li>
+						</ul>
+						
+					</nav>
+				</header>
+
+			<!-- planning -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Characterization of Mixed Integer Linear
+Programming for Multi Robot Task
+Allocation</h2>
+						</header>
+						<div class="row gtr-150">
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+									<section id="overview">
+										<section>
+											<h3>Overview</h3>
+                                            <p>This project focused on the challenge of coordinating swarms of robots in large-scale scenarios such as search and rescue. In such environments, no single robot can cover the entire area, making efficient task distribution essential. The problem was modeled as a Multiple Traveling Salesman Problem (mTSP), where a homogeneous swarm of robots had to complete a set of tasks while minimizing the total travel distance. To address this, a Mixed Integer Linear Programming (MILP) solver was used, providing an exact method for finding the optimal task allocation. The work set out to benchmark MILP’s performance and examine how its computation scales with the number of robots and tasks.</p>
+											<footer>
+												
+											</footer>
+										</section>
+										<hr />
+										<section>
+											<a href="#" class="image fit"><img src="research/images/milp_scenario.png" alt="" /></a>
+											<h3>Approach</h3>
+											<p>The problem was formally represented on a grid, with robots beginning at a start location, completing assigned tasks, and finishing at an endpoint. A set of tensors was defined to encode robot routes, costs, and task assignments under strict constraints to ensure that tasks were only visited once, robots did not form subtours, and all start and end conditions were respected. This formulation was implemented in MATLAB, where the decision and cost tensors were vectorized and solved using MILP optimization. To test scalability, experiments varied both the number of tasks (1–10) and robots (1–10), with each configuration repeated 10 times across randomized environments to avoid bias. Performance was evaluated by measuring average runtime and its variance, with results visualized using heatmaps to reveal underlying trends.</p>
+										</section>
+									</section>
+
+							</div>
+							<div class="col-8 col-12-medium imp-medium">
+
+								<!-- Content -->
+									<section id="content">
+										<a href="#" class="image fit"><img src="research/images/milp_data.png" alt="" /></a>
+										<h3>Results</h3>
+										<p>The MILP solver consistently generated optimal schedules across all tested cases, validating its role as a reliable benchmark for multi-robot task allocation. However, the analysis showed that computation time increased super-linearly as the number of tasks or robots grew, with heatmaps revealing distinct inflection points where complexity rose sharply. While MILP guarantees optimal solutions, it does not scale well to larger swarms, making it impractical for real-time or large-scale deployments. The findings highlight the importance of alternative approaches, such as heuristic methods or neural network–based schedulers. This project not only provided a detailed characterization of MILP for MRTA but also established a baseline for comparing future algorithms.</p>
+                                        <h3>Paper</h3>
+                                        <a href="Downloads/Epistemic Smart Predict then Optimize Swarm Task Allocation.pdf" download="Epistemic Smart Predict then Optimize Swarm Task Allocation.pdf">Download Paper</a>
+									</section>
+
+							</div>
+							<div class="col-8 col-12-medium imp-medium">
+
+								<!-- Content -->
+									<section id="content">
+										<h3>Distributed Data Structures for Lunar Robot Swarms</h3>
+										<a href="#" class="image fit"><img src="research/images/lunar_multiRobot.jpeg" alt="" /></a>
+										<p>I built core components of the Hive data structure in Buzz to enable simple and reliable data sharing across robot swarms. A key part of this work was designing a distributed clock using a version vector and integrating it into Hive as a replacement for the existing real clock. I tested and refined the implementation through simulations in ARGoS 3, combining Buzz and C++ to validate correctness and scalability. The simulations were also evaluated for their suitability in real-world swarm deployments, ensuring the design could extend beyond simulation.</p>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/ozgreen/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/OmriGreen" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="mailto:ozgreen@wpi.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+		</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+
+
+	</body>
+</html>
