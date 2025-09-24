@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Kinodynamic Planning</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="">
+					</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="combatRobots.html">Combat Robots</a></li>
+							<li><a href="autonomousBattling.html">Autonomous Motion Planning</a></li>
+							<li><a href="https://www.linkedin.com/in/ozgreen/" class="icon brands alt fa-linkedin-in"><span class="label"></span></a></li>
+							<li><a href="https://github.com/OmriGreen" class="icon brands alt fa-github"><span class="label"></span></a></li>
+							<li><a href="mailto:ozgreen@wpi.edu" class="icon solid alt fa-envelope"><span class="label"></span></a></li>
+						</ul>
+						
+					</nav>
+				</header>
+
+			<!-- planning -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Autonomous Motion Planning</h2>
+							<p>Generalized Kinodynamic Motion Planning for Autonomous Battlebots</p>
+						</header>
+						<div class="row gtr-150">
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+									<section id="overview">
+										<section>
+											<h3>Overview</h3>
+											<p>I developed a generalized kinodynamic motion planning framework for autonomous combat robots. Instead of needing to make custom planners for each design, I created a unified model that handles both movement and weapon dynamics across different drive and weapon types.</p>
+											<footer>
+												
+											</footer>
+										</section>
+										<hr />
+										<section>
+											<a href="#" class="image fit"><img src="combatRobotics/images/force_diagrams_combat.png" alt="" /></a>
+											<h3>Mathematical Modelling</h3>
+											<p>I built a generalized mathematical model to represent how battlebots move and fight. Most drive systems can be simplified to a differential drive with the exception of walkers, so I incorporated both wheel forces and weapon torque into a single force diagram. By defining the robot’s control inputs (left drive, right drive, and weapon motors) and relating them to motion through the force diagram and known robot properties, I created a model that can adapt to different robot designs. Allowing me to test and comparing sampling algorithms for the kinodynamic planner to see if they are viable for real life motion planning. </p>
+											
+										</section>
+									</section>
+
+							</div>
+							<div class="col-8 col-12-medium imp-medium">
+
+								<!-- Content -->
+									<section id="content">
+										<a href="#" class="image fit"><img src="combatRobotics/images/planning_testing_combat.png" alt="" /></a>
+										<h3>Testing and Results</h3>
+										<p>While testing the KPIECE1, RG-RRT, and RRT based kinodynamic planners I
+found that the optimal planner for a combat robot is a KPIECE1 planner. During the trials
+it did not require an approximate solution once, while the
+RRT and RG-RRT planners both required one a majority of the time.
+When solving a problem to find the a correct
+solution RG-RRT only worked 43 percent of the time when
+compared with RRT and KPIECE1 getting 100 percent of the
+problems with correct solution. However, while analyzing the
+percentage of paths found, it was revealed that RRT could
+not solve any, while RG-RRT could only solve around 43
+percent, meanwhile KPIECE1 could solve every path. The
+number of graph motions had results identical to the number of
+graph states. Finally in the most important metric, KPIECE1
+outperformed both RG-RRT and standard RRT with KPIECE1
+having an average solving time of roughly 0.1s.</p>
+										<h3>Report and Code</h3>
+										<a href="Downloads/combat_kinodynamic_planner.zip" download="combat_kinodynamic_planner.zip">Download Report and Code</a>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/ozgreen/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/OmriGreen" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="mailto:ozgreen@wpi.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+		</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>GE Vernova</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="">
+					</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+                            <li><a href="vernova.html">GE Vernova</a></li>
+                            <li><a href="ttm.html">TTM Technologies</a></li>
+                            <li><a href="fujifilm.html">Fujifilm Dimatix</a></li>
+							<li><a href="fabric.html">Fabric Microfulfillment</a></li>
+							<li><a href="https://www.linkedin.com/in/ozgreen/" class="icon brands alt fa-linkedin-in"><span class="label"></span></a></li>
+							<li><a href="https://github.com/OmriGreen" class="icon brands alt fa-github"><span class="label"></span></a></li>
+							<li><a href="mailto:ozgreen@wpi.edu" class="icon solid alt fa-envelope"><span class="label"></span></a></li>
+						</ul>
+						
+					</nav>
+				</header>
+
+			<!-- planning -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>GE Vernova Advanced Research: Robotics Research Intern</h2>
+							<p>May 2025 - August 2025</p>
+						</header>
+						<div class="row gtr-150">
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+									<section id="overview">
+										<section>
+											<h3>Overview</h3>
+											<p>At GE Vernova I worked on two main projects. SPEEDWORM, a research project funded by ARPA-E designed to enable minmially invasive undergrounding of electrical infrastructure that can fit in the back of a truck, unlike current methods of horizontal directional drilling, which requires much more equipment.  
+                                                I also worked on the Wind Turbine Blade Post Infusion Inspection System, a system that is designed to not only reduce strain on workers trying to find defects on a wind turbine blade after infusion, but also to help them find defects more reliably as well as create the training data needed to train an AI to be a "second set of eyes"
+                                            allowing for more reliable defect detection. Most of my work was proprietary and I am only able to show what is publically available.</p>
+											<footer>
+												
+											</footer>
+										</section>
+										<hr />
+										<section>
+											<a href="#" class="image fit"><img src="experience/images/speedworm.png" alt="" /></a>
+											<h3>SPEEDWORM: Underground Tunneling Robot</h3>
+											<p>While working on SPEEDWORM, my job was to develop a prototype steering mechanism using Solidworks.  I referenced a wide variety of academia, as well as research previously done at GE Vernova.  
+                                                In the end after discussing potential approaches with the rest of the team, we decided that I should focus on using a "bent cone" for turning the robot based on both previous research showing that a bent cone allows the robot steer, as well as similar methods being used in horizontal directional drilling.
+                                            </p>
+                                            <p>
+                                                The goal was to design the system to be integrated into the existing robot, so I could not rely on large assemblies or heavy electronics considering the space I had to work with.  In the end I decided that the design should turn the front of the robot by transforming the force from the piston that moves the robot forward into torque enabling the robot to steer without adding any additional electronics.
+
+                                            </p>
+                                            <p>After creating 3 seperate iterations of the design, I finalized it and created a test stand where the steering mechanism was attached to a piston similar to the one currently on SPEEDWORM, by varying how far the piston extends and contracts a user can turn the tip of the robot clockwise or counterclockwise.</p>
+
+                                            <p>Towards the end of the internship ARPA-E came over for a status update, I presented the functional mechanism to the representatives as well as explaining how it works.</p>
+
+                                            <p>The last thing I did for the project was coding a spare PLC and selecting the necessary hardware to stress test the steering mechanism, recording how much it turns as well as how far it moves before the mechanism breaks.</p>
+											
+										</section>
+									</section>
+
+							</div>
+							<div class="col-8 col-12-medium imp-medium">
+
+								<!-- Content -->
+									<section id="content">
+										<a href="#" class="image fit"><img src="experience/images/wind_turbine_assembly.jpg" alt="" /></a>
+										<h3>Wind Turbine Blade Post Infusion Inspection System</h3>
+										<p>My main role on the team was sensor integration.  To do this my first task was to code an interface between the robot's main controller and a drone camera API that allows for multiple simaltaneous images, allowing the system to analyze its surroundings.  To do this my first step was figuring out how to take images with a camera and record the necessary metadata ,distance readings from two sensors, the camera ID, and a timestamp, within 0.2s, roughly the time it takes the system to move a 1m. 
+                                        The initial approach was to minimize the time it takes for a single camera to setup an image, the camera API by default made the camera refocus every time before taking an image, by disabling this feature except for when the system begins moving, it reduced the time to take an image to an acceptable level, however, it was still to slow.  The next bottleneck was file transfer, it took to long to transfer the image from the camera to the SSD, so after analyzing the equipment, I found that the USB 2.0 cables being used for data transfer weren't sufficient for the task, so they were swapped out for USB 3.0 cables.
+                                        The next step was to get the cameras to take an image in unison, by multithreading the function taking the images it enabled the system to take a photo with all of its cameras simaltaneously.  However, this caused the issue with the file transfer speed not being sufficient to return, to fix this after discussing it with the other team members I moved the file transfer from the cameras to the SSD from happening between every set of photos to happening at the end of the inspection, making the file transfer speed irrelevant while having the metadata stored in a log file before every set of images was taken.  
+                                        At the end of the process the system would read through the log file and add the necessary metadata to the image before transferring it to the SSD.</p>
+
+
+                                        <p>My second task was more mechanical, the system was initally designed to home its actuators using onboard torque sensors to detect if the actuators have went to their zero point, however, it did not work.  I was tasked with developing custom limit switch mounts to detect when the robot was homed.  Since I was unable to make drastic changes to the robot I designed the sensor systems to be easily attachable with minimal to no modification of the inspection system.  One issue I faced was that one of the actuators had a wide range of motion making a normal limit switch impossible to use. 
+                                            To fix this issue I printed out a flexible lever arm which would cover the actuator's range of motion so that when it homed it would press on the lever and then the lever would press on a traditional limit switch.  The other limit switch was unable to be mounted below the actuator because, there wasn't enough room to place the switch while keeping the actuator functional.  To get around this issue I created a small arm which would be attached to the bottom of the actuator, which reached out to an open area where the limit switch would be mounted.  This way when the actuator was homed it would be able to press the switch. </p>
+										
+                                        <p>This system has been tested at one of GE Vernova's wind turbine blade factories.  It has been reported that when compared to traditional post infusion inspection, workers not only catch more defects, but they also experience less back pain.  This not only increases the effectiveness of the employees building these blades, but it also makes their lives eaiser.  Considering these amazing results this system is now being iterated on for deployment at more of GE Vernova's wind turbine blade factories.</p>
+                                        
+                                            <h3>Company Website</h3>
+									        <li><a href="https://www.gevernova.com/">GE Vernova</a></li>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/ozgreen/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/OmriGreen" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="mailto:ozgreen@wpi.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+		</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
