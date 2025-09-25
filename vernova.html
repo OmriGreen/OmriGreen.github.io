@@ -46,18 +46,12 @@
 									<section id="overview">
 										<section>
 											<h3>Overview</h3>
-											<p>At GE Vernova I worked on two main projects. 
-												SPEEDWORM, a research project funded by ARPA-E, 
-												designed to enable minimally invasive undergrounding 
-												of electrical infrastructure, 
-												which can fit in the back of a truck, 
-												unlike current methods of horizontal directional drilling. 
-												I also worked on the Wind Turbine Blade Post Infusion Inspection System,
-												 a system that is designed to not only reduce strain on workers trying 
-												 to find defects on a wind turbine blade after infusion,
-												  but also to help them find defects more reliably as well as 
-												  create the training data needed to train an AI to be a "second set of eyes",
-												   allowing for more reliable defect detection.  </p>
+											<p>At GE Vernova, I contributed to two key projects:</p>
+											<ul>
+											<li>SPEEDWORM—an ARPA-E funded initiative—aimed to develop a compact, truck-portable system for minimally invasive undergrounding of electrical infrastructure, unlike traditional horizontal directional drilling. </li>
+											<li>Wind Turbine Blade Post-Infusion Inspection System designed to ease worker strain, improve defect detection, and generate training data for AI-assisted inspections.  </li>
+											</ul>
+											<p>Due to proprietary constraints, I can only share publicly available details.</p>
 											<footer>
 												
 											</footer>
@@ -67,15 +61,9 @@
 											<a href="#" class="image fit"><img src="experience/images/speedworm.png" alt="" /></a>
 											<h3>SPEEDWORM: Underground Tunneling Robot </h3>
 											
-											<p>While working on SPEEDWORM, my job was to develop a prototype steering mechanism using Solidworks. I referenced a wide variety of academic publications, as well as research previously done at GE Vernova. After discussing potential approaches with the team, we decided that I should focus on using a "bent cone" for turning the robot, based on previous research showing that a bent cone allows the robot steer, and similar methods being used in horizontal directional drilling. </p>
-
-											<p>The goal was to design the system to be integrated into the existing robot, so I would not rely on large assemblies or heavy electronics considering the space I had to work with. At the end, I decided that the design should turn the front of the robot by transforming the force from the piston that moves the robot forward into torque enabling the robot to steer without adding any additional electronics. </p>
-
-											<p>After creating three  separate iterations of the design, I finalized it and created a test stand where the steering mechanism was attached to a piston similar to the one currently on SPEEDWORM, by varying how far the piston extends and contracts a user can turn the tip of the robot clockwise or counterclockwise. </p>
-                                            
-											<p>Towards the end of the internship, ARPA-E representatives came over for a status update.  I presented the functional mechanism, and how the steering mechanism works. </p>
-
-											<p>The last thing I did for the project was coding a spare PLC and selecting the necessary hardware to stress test the steering mechanism, recording how much it turns as well as how far it moves before the mechanism breaks. </p>											
+											<p>While working on SPEEDWORM, I was responsible for developing a prototype steering mechanism using SolidWorks. I reviewed academic literature and prior GE Vernova research, and after team discussions, we chose a “bent cone” design—based on its proven effectiveness in steering and its use in horizontal directional drilling. The design needed to fit within the existing robot, so I avoided bulky assemblies and electronics. I created a system that converts the forward force from the piston into torque, allowing the robot to steer without added components.</p>
+											<p>After three design iterations, I built a test stand with a piston setup identical to SPEEDWORM’s. By adjusting piston extension and contraction, the robot’s tip could be turned clockwise or counterclockwise.  I also programmed a spare PLC and selected hardware to stress test the mechanism, measuring its range of motion and failure limits.</p>	
+											<p>Near the end of the internship, I presented the working prototype to ARPA-E representatives, explaining its function and design. </p>						
 										</section>
 									</section>
 
@@ -86,14 +74,11 @@
 									<section id="content">
 										<a href="#" class="image fit"><img src="experience/images/wind_turbine_assembly.jpg" alt="" /></a>
 										<h3>Wind Turbine Blade Post Infusion Inspection System </h3>
-										<p>My main role on the team was sensor integration. To do this, my first task was to code an interface between the robot's main controller and a drone camera API that allows for multiple simultaneous images, allowing the system to analyze its surroundings. To do this, my first step was figuring out how to take images with a camera and record the necessary metadata, distance readings from two sensors, the camera ID, and a timestamp, within 0.2s, roughly the time it takes the system to move a 1m.  </p>
+										<p>My primary responsibility on the team was sensor integration. I began by developing an interface between the robot’s main controller and a drone camera API to enable simultaneous image capture for environmental analysis. This required capturing images along with metadata—distance readings from two sensors, camera ID, and timestamp—within 0.2 seconds, the time it takes the system to move one meter. To reduce image setup time, I disabled the camera’s default auto-refocus except at the start of movement. Although this improved performance, file transfer remained a bottleneck. After reviewing the hardware, I replaced USB 2.0 cables with USB 3.0 to increase transfer speed. I then implemented multithreading to allow all cameras to capture images simultaneously. This reintroduced transfer delays, which I resolved by deferring image transfers until the end of the inspection. Metadata was logged before each image set and later merged with the images prior to saving to the SSD. </p>										
 										
-										<p>The initial approach was to minimize the time it takes for a single camera to set up an image.  The camera API, by default, made the camera refocus every time before taking an image, by disabling this feature except for when the system begins moving, it reduced the time to take an image to an acceptable level.  However, it was still too slow. The next bottleneck was file transfer. It took too long to transfer the image from the camera to the SSD, so after analyzing the equipment I found that the USB 2.0 cables being used for data transfer weren't sufficient for the task, so they were swapped for USB 3.0 cables. The next step was to get the cameras to take an image in unison, by multithreading the function taking the images enabled the system to take a photo with all of its cameras simultaneously. However, this caused the issue with the file transfer speed not being sufficient to return. In order to fix this, I moved the file transfer from the cameras to the SSD from happening between every set of photos to happening at the end of the inspection, making the file transfer speed irrelevant, while having the metadata stored in a log file before every set of images was taken. At the end of the process, the system read through the log file and added the necessary metadata to the image before transferring it to the SSD. </p>
-                                        
-										<p>My second task was more mechanical. The system was initially designed to home its actuators using onboard torque sensors to detect if the actuators have gone to their zero point. However, it did not work. I was tasked with developing custom limit switch mounts to detect when the robot was homed. Since I was unable to make drastic changes to the robot, I designed the sensor systems to be easily attachable with minimal to no modification of the inspection system. One issue I faced was that one of the actuators had a wide range of motion making a normal limit switch impossible to use. To fix this issue, I printed out a flexible lever arm which covers the actuator's range of motion, so that when it homed it presses on the lever and then the lever presses on a traditional limit switch. The other limit switch was unable to be mounted below the actuator because there wasn't enough room to place the switch while keeping the actuator functional. To get around this issue, I created a small arm which was attached to the bottom of the actuator, which reached out to an open area where the limit switch was mounted. This way, when the actuator was homed it enabled to press the switch. </p>
-
-										<p>This system has been tested at one of GE Vernova's wind turbine blade factories. It has been reported that when compared to traditional post infusion inspection, workers not only catch more defects, but they also experience less back pain. This not only increases the effectiveness of the employees building these blades, but it also makes their lives eaiser. Considering these amazing results this system is now being iterated on for deployment at more of GE Vernova's wind turbine blade factories. </p>
-                                            <h3>Company Website</h3>
+										<p>My second task involved mechanical design. The original actuator homing method relied on torque sensors, which proved unreliable. I was assigned to develop custom limit switch mounts to detect when the robot was homed. Due to constraints on modifying the system, I designed sensor attachments that required minimal changes. One actuator had a wide range of motion, making a standard limit switch impractical. To address this, I created a flexible lever arm that would trigger the switch when homed. Another actuator lacked space for a switch beneath it, so I designed a small extension arm that reached an open area where the switch could be mounted. </p>
+										<p>The system was tested at a GE Vernova wind turbine blade factory. Compared to traditional post-infusion inspection methods, workers identified more defects and reported reduced physical strain. Based on these results, the system is now being refined for deployment at additional GE Vernova facilities.  </p>
+										<h3>Company Website</h3>
 									        <li><a href="https://www.gevernova.com/">GE Vernova</a></li>
 									</section>
 
