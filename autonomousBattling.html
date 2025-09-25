@@ -44,7 +44,7 @@
 									<section id="overview">
 										<section>
 											<h3>Overview</h3>
-											<p>I developed a generalized kinodynamic motion planning framework for autonomous combat robots. Instead of needing to make custom planners for each design, I created a unified model that handles both movement and weapon dynamics across different drive and weapon types.</p>
+											<p>I developed a generalized kinodynamic motion planning framework for autonomous combat robots. Instead of making custom planners for each, I created a unified model that handles both movement and weapon dynamics across different drive and weapon types. </p>
 											<footer>
 												
 											</footer>
@@ -53,7 +53,7 @@
 										<section>
 											<a href="#" class="image fit"><img src="combatRobotics/images/force_diagrams_combat.png" alt="" /></a>
 											<h3>Mathematical Modelling</h3>
-											<p>I built a generalized mathematical model to represent how battlebots move and fight. Most drive systems can be simplified to a differential drive with the exception of walkers, so I incorporated both wheel forces and weapon torque into a single force diagram. By defining the robot’s control inputs (left drive, right drive, and weapon motors) and relating them to motion through the force diagram and known robot properties, I created a model that can adapt to different robot designs. Allowing me to test and comparing sampling algorithms for the kinodynamic planner to see if they are viable for real life motion planning. </p>
+											<p>I built a generalized mathematical model to represent how battlebots move and fight. Most drive systems can be simplified to a differential drive with the exception of walkers. So, I incorporated both wheel forces and weapon torque into a single force diagram. By defining the robot’s control inputs (left drive, right drive, and weapon motors) and relating them to motion through the force diagram and known robot properties, I created a model that can adapt to different robot designs. Allowing me to test and compare sampling algorithms for the kinodynamic planner to see if they are viable for real life motion planning. </p>
 											
 										</section>
 									</section>
@@ -65,21 +65,7 @@
 									<section id="content">
 										<a href="#" class="image fit"><img src="combatRobotics/images/planning_testing_combat.png" alt="" /></a>
 										<h3>Testing and Results</h3>
-										<p>While testing the KPIECE1, RG-RRT, and RRT based kinodynamic planners I
-found that the optimal planner for a combat robot is a KPIECE1 planner. During the trials
-it did not require an approximate solution once, while the
-RRT and RG-RRT planners both required one a majority of the time.
-When solving a problem to find the a correct
-solution RG-RRT only worked 43 percent of the time when
-compared with RRT and KPIECE1 getting 100 percent of the
-problems with correct solution. However, while analyzing the
-percentage of paths found, it was revealed that RRT could
-not solve any, while RG-RRT could only solve around 43
-percent, meanwhile KPIECE1 could solve every path. The
-number of graph motions had results identical to the number of
-graph states. Finally in the most important metric, KPIECE1
-outperformed both RG-RRT and standard RRT with KPIECE1
-having an average solving time of roughly 0.1s.</p>
+										<p>While testing the KPIECE1, RG-RRT, and RRT based kinodynamic planners I found that the optimal planner for a combat robot is a KPIECE1 planner. During the trials it did not require an approximate solution once, while the RRT and RG-RRT planners both required one the majority of the time. When solving a problem to find a correct solution RG-RRT only worked 43 percent of the time when compared with RRT and KPIECE1 getting 100 percent of the problems with correct solution. However, while analyzing the percentage of paths found, it was revealed that RRT could not solve any, while RG-RRT could only solve around 43 percent, meanwhile KPIECE1 could solve every path. The number of graph motions had results identical to the number of graph states. Finally in the most important metric, KPIECE1 outperformed both RG-RRT and standard RRT with KPIECE1 having an average solving time of roughly 0.1s. </p>
 										<h3>Report and Code</h3>
 										<a href="Downloads/combat_kinodynamic_planner.zip" download="combat_kinodynamic_planner.zip">Download Report and Code</a>
 									</section>
